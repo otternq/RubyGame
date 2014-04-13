@@ -9,6 +9,7 @@ class Bag
     raise ArgumentError, 'Argument is not an Item' unless item.kind_of?(Item)
 
     @items << item
+
   end
 
   def getItemByKey(index)
@@ -17,6 +18,7 @@ class Bag
     raise ArgumentError, 'Value of `index` not valid' unless @items[index].nil?
 
     return @items[index]
+
   end
 
   # == Summary
