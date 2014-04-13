@@ -1,10 +1,6 @@
 # == game.rb
 #
 
-require_relative "characters/character"
-require_relative "items/item"
-require_relative "items/bag"
-
 # == Summary
 #
 # The game
@@ -15,7 +11,9 @@ class Game
   #
   def initialize()
 
-    @player = Character.new("Nick Otter", Character::MALE)
+    @player = CharacterHelper.loadPlayer
+
+    welcome()
 
     @player.putInBag(
       Item.new(0, "Key", "A key to a car")
@@ -23,15 +21,24 @@ class Game
 
     @currentLevel = 1
 
+    loadLevel()
+
   end
 
   def welcome
-    puts "Welcome %s", @player.getName()
+    puts "Welcome #{@player.getName()}"
   end
 
   def start
 
-    puts "Starting level %s", @currentLevel
+    puts "Starting level #{@currentLevel}"
+    @level.printItems()
+
+  end
+
+  def loadLevel()
+
+    @level = LevelFactory::getLevel(@currentLevel)
 
   end
 

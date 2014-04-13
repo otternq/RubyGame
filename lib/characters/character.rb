@@ -55,13 +55,13 @@ class Character
     begin
 
       @bag.addItem(item)
-      printf "Added %s to %s's bag", item.getTitle(), @name
+      puts "Added #{item.getTitle()} to #{@name}'s bag"
 
       return true
 
     rescue ArgumentError
 
-      printf "Cannot add item to %s's bag", @name
+      puts "Cannot add item to #{@name}'s bag"
       return false
 
     end
