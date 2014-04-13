@@ -32,7 +32,7 @@ class Game
   def start
 
     puts "Starting level #{@currentLevel}"
-    @level.printItems()
+    @level.printSummary()
 
   end
 

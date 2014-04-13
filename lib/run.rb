@@ -11,6 +11,10 @@ require_relative "items/bag"
 
 require_relative "levels/levelFactory"
 
+puts "\n\n"
+
 game = Game.new()
 
 game.start()
+
+puts "\n\n"

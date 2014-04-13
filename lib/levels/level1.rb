@@ -5,6 +5,7 @@ class Level1 < Level
 
   def initialize()
 
+    @title = "South Boise"
     @description = "A fucking cold ass desert"
 
     @items = [
